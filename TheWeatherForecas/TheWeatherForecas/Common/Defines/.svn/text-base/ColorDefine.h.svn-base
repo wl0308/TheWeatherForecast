@@ -1,0 +1,15 @@
+//
+//  ColorDefine.h
+//  ThailandGo
+//
+//  Created by Daniel on 15/10/12.
+//  Copyright © 2015年 Daniel. All rights reserved.
+//
+
+//0 140213
+#define BlueColor [UIColor colorWithRed:247/255.0f green:247/255.0f blue:247/255.0f alpha:1]
+#define RedColor [UIColor colorWithRed:221/255.0f green:85/255.0f blue:85/255.0f alpha:1]
+
+#define MAIN_RED_COLOR RGBACOLOR(254,111,117,1.0)
+
+#define MAIN_BALCOLOR RGBACOLOR(241,241,241,1.0)

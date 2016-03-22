@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/repos/!svn/ver/3370/Client/ios/YiHaiFarm/trunk/YiHaiFarm/YiHaiFarm/Common/Defines
+END
+ColorDefine.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/repos/!svn/ver/3370/Client/ios/YiHaiFarm/trunk/YiHaiFarm/YiHaiFarm/Common/Defines/ColorDefine.h
+END
+DeviceDefine.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/repos/!svn/ver/3370/Client/ios/YiHaiFarm/trunk/YiHaiFarm/YiHaiFarm/Common/Defines/DeviceDefine.h
+END
+FrameDefine.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/repos/!svn/ver/3370/Client/ios/YiHaiFarm/trunk/YiHaiFarm/YiHaiFarm/Common/Defines/FrameDefine.h
+END
+ToolDefine.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/repos/!svn/ver/3370/Client/ios/YiHaiFarm/trunk/YiHaiFarm/YiHaiFarm/Common/Defines/ToolDefine.h
+END

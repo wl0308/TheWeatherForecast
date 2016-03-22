@@ -1,0 +1,17 @@
+source 'https://github.com/CocoaPods/Specs'
+
+platform :ios, "7.0"
+
+pod "pop"
+pod "SDWebImage"
+pod "AFNetworking","~> 2.6.3"
+pod "MJRefresh"
+pod "SVProgressHUD", "~> 0.9"
+pod "Masonry"
+pod "MagicalRecord" , "~>2.0.4"
+pod "IQKeyboardManager"
+pod "BaiduMapKit"
+pod 'CYLTableViewPlaceHolder', '~> 1.0.8'
+pod 'ReactiveCocoa', '~> 2.5'
+pod "LxDBAnything"
+pod "MJExtension"

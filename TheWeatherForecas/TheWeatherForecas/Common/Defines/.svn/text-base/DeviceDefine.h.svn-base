@@ -1,0 +1,10 @@
+//
+//  DeviceDefine.h
+//  ThailandGo
+//
+//  Created by Daniel on 15/9/28.
+//  Copyright © 2015年 Daniel. All rights reserved.
+//
+
+//获取当前APP版本
+#define CLIENT_VERSION [[[NSBundle mainBundle] infoDictionary]objectForKey:@"CFBundleShortVersionString"]

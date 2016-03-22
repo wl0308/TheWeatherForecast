@@ -1,0 +1,73 @@
+//
+//  PrefixHeader.pch
+//  TheWeatherForecas
+//
+//  Created by Naive on 16/3/22.
+//  Copyright © 2016年 Naive. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//#import <Availability.h>
+//
+////#ifndef __IPHONE_3_0
+////#warning "This project uses features only available in iOS SDK 3.0 and later."
+////#endif
+//
+////#ifdef __OBJC__
+//#import <UIKit/UIKit.h>
+//#import <Foundation/Foundation.h>
+//#import <QuartzCore/QuartzCore.h>
+//// Include any system framework and library headers here that should be included in all compilation units.
+//// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+//#pragma mark - Common
+//
+//
+//
+#import "DeviceDefine.h"
+#import "FrameDefine.h"
+#import "ColorDefine.h"
+#import "StringDefine.h"
+#import "ToolDefine.h"
+//#import "HttpConfig.h"
+//#import "NSDictionary+FarmInformation.h"
+//#import "NSString+Category.h"
+//#pragma mark ----------------------------- UI
+//
+////#import "SNUITableView.h"
+////#import "SNUITableViewCell.h"
+////#import "SNUIBarButtonItem.h"
+////#import "SNUIAlertView.h"
+////#import "SNUIActionSheet.h"
+////#import "SNUILabel.h"
+////#import "SNUITextField.h"
+////#import "SNUIWebView.h"
+////#import "SNUIButton.h"
+////#import "SNUITextView.h"
+////#import "SNUIView.h"
+////#import "SNUIImageView.h"
+////#import "SNUIScrollView.h"
+////#import "SNUISearchBar.h"
+////#import "SNUIPageControl.h"
+////#import "BBAlertView.h"
+////#import "SNBarButtonItem.h"
+//
+//#pragma mark ----------------------------- others
+//
+//#import "SNFoundation.h"
+//#import <Masonry.h>
+//#import <ReactiveCocoa.h>
+//#import <LxDBAnything/LxDBAnything.h>
+////#import <UIImageView+WebCache.h>
+//#import "Singer.h"
+//#import <SVProgressHUD/SVProgressHUD.h>
+//#import "OMGToast.h"
+//#import "CommonMethod.h"
+//#import <CoreLocation/CoreLocation.h>
+//#import "BaiduLocationManger.h"
+//
+//#import <MJExtension.h>
+
+
+#endif /* PrefixHeader_pch */

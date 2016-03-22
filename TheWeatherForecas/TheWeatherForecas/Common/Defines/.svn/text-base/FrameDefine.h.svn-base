@@ -1,0 +1,12 @@
+//
+//  FrameDefine.h
+//  ThailandGo
+//
+//  Created by Daniel on 15/10/12.
+//  Copyright © 2015年 Daniel. All rights reserved.
+//
+
+#define NAVHEIGHT 64
+
+#define SCREEN_H [UIScreen mainScreen].bounds.size.height
+#define SCREEN_W [UIScreen mainScreen].bounds.size.width

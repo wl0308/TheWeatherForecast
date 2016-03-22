@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/repos/!svn/ver/3372/Client/ios/YiHaiFarm/trunk/YiHaiFarm/YiHaiFarm/Networking/HttpTools
+END
+ScenicHttpAPi.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/repos/!svn/ver/3368/Client/ios/YiHaiFarm/trunk/YiHaiFarm/YiHaiFarm/Networking/HttpTools/ScenicHttpAPi.h
+END
+CommonHttpAPI.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/repos/!svn/ver/3368/Client/ios/YiHaiFarm/trunk/YiHaiFarm/YiHaiFarm/Networking/HttpTools/CommonHttpAPI.h
+END
+HomeHttpAPI.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/repos/!svn/ver/3372/Client/ios/YiHaiFarm/trunk/YiHaiFarm/YiHaiFarm/Networking/HttpTools/HomeHttpAPI.h
+END
+ScenicHttpAPi.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/repos/!svn/ver/3368/Client/ios/YiHaiFarm/trunk/YiHaiFarm/YiHaiFarm/Networking/HttpTools/ScenicHttpAPi.m
+END
+HttpConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/repos/!svn/ver/3368/Client/ios/YiHaiFarm/trunk/YiHaiFarm/YiHaiFarm/Networking/HttpTools/HttpConfig.h
+END
+CommonHttpAPI.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/repos/!svn/ver/3368/Client/ios/YiHaiFarm/trunk/YiHaiFarm/YiHaiFarm/Networking/HttpTools/CommonHttpAPI.m
+END
+HomeHttpAPI.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/repos/!svn/ver/3372/Client/ios/YiHaiFarm/trunk/YiHaiFarm/YiHaiFarm/Networking/HttpTools/HomeHttpAPI.m
+END
