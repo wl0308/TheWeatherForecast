@@ -217,7 +217,7 @@ static NSString * const WEATHER_KEY = @"af5a3721915b6e3a3016fe694f47b0de";//ËÅöÂ
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"WeatherInfoCell" owner:self options:nil] firstObject];
         }
-        //        [cell setWeatherInfo:indexPath];
+        [cell setWeatherInfoLab:weather_model.result.today];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;

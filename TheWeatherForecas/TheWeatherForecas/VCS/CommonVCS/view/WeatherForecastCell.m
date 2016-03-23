@@ -16,6 +16,7 @@
     self.cityWeather.text = model.result.today.weather;
     self.cityTemp.text = model.result.sk.temp;
     self.cityHumidity.text = [NSString  stringWithFormat:@"湿度:%@",model.result.sk.humidity];
+    self.weatherTime.text = [NSString stringWithFormat:@"[%@  %@发布]",model.result.today.date_y,model.result.sk.time];
 }
 
 - (void)awakeFromNib {

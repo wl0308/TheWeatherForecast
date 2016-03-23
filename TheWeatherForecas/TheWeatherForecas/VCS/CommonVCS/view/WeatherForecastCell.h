@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *cityWeather;
 @property (weak, nonatomic) IBOutlet UILabel *cityTemp;
 @property (weak, nonatomic) IBOutlet UILabel *cityHumidity;
+@property (weak, nonatomic) IBOutlet UIButton *citySelectBtn;
+@property (weak, nonatomic) IBOutlet UILabel *weatherTime;
 
 - (void)setWeatherForecast:(WeatherModel *)model;
 

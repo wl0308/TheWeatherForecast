@@ -10,6 +10,19 @@
 
 @implementation WeatherInfoCell
 
+- (void)setWeatherInfoLab:(Today *)model {
+    
+    self.weatherInfo_lab1.text = model.dressing_index;
+    self.weatherInfo_lab2.text = model.dressing_advice;
+    self.weatherInfo_lab3.text = model.uv_index;
+    self.weatherInfo_lab4.text = model.comfort_index;
+    self.weatherInfo_lab5.text = model.travel_index;
+    self.weatherInfo_lab6.text = model.exercise_index;
+    self.weatherInfo_lab7.text = model.wash_index;
+    self.weatherInfo_lab8.text = model.drying_index;
+    
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }
