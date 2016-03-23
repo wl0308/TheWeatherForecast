@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9EAA943433964ADD7AF84401'
+               BlueprintIdentifier = '8FDE8B46B523E69F7FA2E11B'
                BlueprintName = 'CYLTableViewPlaceHolder'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libCYLTableViewPlaceHolder.a'>

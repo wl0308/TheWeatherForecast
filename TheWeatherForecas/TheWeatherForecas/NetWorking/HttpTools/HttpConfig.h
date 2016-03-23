@@ -12,20 +12,29 @@
 
 
 
-//#define ReleaseHost @"http://121.42.165.3:8080"
-//#define DebugHost @"http://192.168.1.101:8088"
-#define ReleaseHost @"http://192.168.1.180:9999"
+#define ReleaseHost @"http://v.juhe.cn/weather/index"
 
-//#define ReleaseHost @"http://api.ehfarm.com"
-//#define ReleaseHost @"http://test.api.ehfarm.com"
 
-#define DebugHost @"http://192.168.1.180:9999"
 
-#define DebugHost_1 @"http://192.168.1.132:8088"
-//#define DebugHost @"http://api.51xixi.me"
-#define ImageHost @"http://192.168.1.180:88"
-//#define ImageHost_Release @"http://image.ehfarm.com"
-#define ImageHost_Release @"http://test.image.ehfarm.com"
+
+/**
+ *
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

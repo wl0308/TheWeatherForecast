@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E7F892EE1C9A79FE00C7B2B4"
-               BuildableName = "TheWeatherForecasTests.xctest"
+               BuildableName = "TheWeatherForecasTests.bundle"
                BlueprintName = "TheWeatherForecasTests"
                ReferencedContainer = "container:TheWeatherForecas.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E7F892F91C9A79FE00C7B2B4"
-               BuildableName = "TheWeatherForecasUITests.xctest"
+               BuildableName = "TheWeatherForecasUITests.bundle"
                BlueprintName = "TheWeatherForecasUITests"
                ReferencedContainer = "container:TheWeatherForecas.xcodeproj">
             </BuildableReference>

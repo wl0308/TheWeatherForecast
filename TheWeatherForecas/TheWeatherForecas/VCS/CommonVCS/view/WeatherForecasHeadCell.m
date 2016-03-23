@@ -10,7 +10,7 @@
 
 @implementation WeatherForecasHeadCell
 
-- (void)setWeatherInfo:(NSIndexPath *)indexPath {
+- (void)setWeatherInfo:(Future *)model {
     
     //假数据，后期删除
     NSArray *arrWeek = [[NSArray alloc] initWithObjects:@"星期一",@"星期二",@"星期三",@"星期四",@"星期五",@"星期六",@"星期天", nil];
@@ -19,11 +19,11 @@
     NSArray *arrHigh = [[NSArray alloc] initWithObjects:@"21",@"11",@"20",@"23",@"25",@"17",@"19", nil];
     NSArray *arrLow = [[NSArray alloc] initWithObjects:@"11",@"9",@"14",@"15",@"17",@"12",@"13", nil];
     
-    self.weatherWeek.text = arrWeek[indexPath.row];
-    self.weatherImg.image = [UIImage imageNamed:arrWeatherImg[indexPath.row]];
-    self.weatherState.text = arrWeather[indexPath.row];
-    self.weatherHigh.text = arrHigh[indexPath.row];
-    self.weatherLow.text = arrLow[indexPath.row];
+    self.weatherWeek.text = model.week;
+    self.weatherImg.image = [UIImage imageNamed:arrWeatherImg[1]];
+    self.weatherState.text = model.weather;
+    self.weatherHigh.text = model.temperature;
+//    self.weatherLow.text = arrLow[indexPath.row];
 }
 
 - (void)awakeFromNib {

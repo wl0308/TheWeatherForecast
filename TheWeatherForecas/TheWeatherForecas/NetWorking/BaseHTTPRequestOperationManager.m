@@ -7,12 +7,14 @@
 //
 
 #import "BaseHTTPRequestOperationManager.h"
-#import "WLNetworkErrorView.h"
 
 static const NSString *Host_URL = ReleaseHost;
 
 
 @implementation BaseHTTPRequestOperationManager
+
+
+
 
 + (BaseHTTPRequestOperationManager *)sharedManager
 {
@@ -22,8 +24,8 @@ static const NSString *Host_URL = ReleaseHost;
         _sharedManager = [[self manager]initWithBaseURL:nil];
         _sharedManager.responseSerializer = [AFHTTPResponseSerializer serializer];
         _sharedManager.requestSerializer = [AFJSONRequestSerializer serializer];
-        [_sharedManager.requestSerializer setValue:CLIENT_VERSION forHTTPHeaderField:@"version"];
-        [_sharedManager.requestSerializer setValue:@"iOS" forHTTPHeaderField:@"source"];
+//        [_sharedManager.requestSerializer setValue:CLIENT_VERSION forHTTPHeaderField:@"version"];
+//        [_sharedManager.requestSerializer setValue:@"iOS" forHTTPHeaderField:@"source"];
         [_sharedManager.responseSerializer setStringEncoding:NSUTF8StringEncoding];
         [_sharedManager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"text/plain",@"text/html",@"application/json" ,nil]];
         [_sharedManager.requestSerializer setTimeoutInterval:10];
@@ -37,24 +39,28 @@ static const NSString *Host_URL = ReleaseHost;
     NSLog(@"\n请求链接%@",method);
     NSLog(@"\n请求参数%@",parameters);
     //请求类型 get
-    [[BaseHTTPRequestOperationManager sharedManager] GET:[Host_URL stringByAppendingString:method] parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+//    [[BaseHTTPRequestOperationManager sharedManager] GET:[Host_URL stringByAppendingString:method] parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+//        
+//       id result =  [self getResult:responseObject];
+//
+//        success(operation,result);
+//
+//        
+//    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+//        NSLog(@"%@",error);
+//        failure(operation, error);
+//    }];
+    [[BaseHTTPRequestOperationManager sharedManager] GET:[@"http://v.juhe.cn/weather/index?format=2&cityname=苏州&key=af5a3721915b6e3a3016fe694f47b0de" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
-       id result =  [self getResult:responseObject];
-//        if ([TokenToolShared checkValidToken:[result objectForKey:@"errcode"]]) {
-//            //登录
-//            
-//            return ;
-//        }
-        [[WLNetworkErrorView shared] networkErrorRemove];
-//        NSLog(@"%@",result);
+        id result =  [self getResult:responseObject];
+        
         success(operation,result);
-
+        
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         NSLog(@"%@",error);
         failure(operation, error);
     }];
-    
     
 }
 
@@ -73,7 +79,7 @@ static const NSString *Host_URL = ReleaseHost;
 //            
 //            return ;
 //        }
-        [[WLNetworkErrorView shared] networkErrorRemove];
+//        [[WLNetworkErrorView shared] networkErrorRemove];
         //        NSLog(@"%@",returnValue);
         success(operation,result);
         
@@ -121,48 +127,48 @@ static const NSString *Host_URL = ReleaseHost;
  *
  *  @return 拼接完成链接  xxxx/xxx?xxx=xxx&yy=yy&zzzz=zzzzz
  */
-+ (NSString *)getUrlCompose:(NSMutableDictionary *)compose withUrl:(NSString *)url{
-    
-    NSArray *valuseAry = [compose allValues];
-    NSArray *keysAry = [compose allKeys];
-    
-    
-    NSString *resultStr = @"";
-    if ([url contains:@"?"]) {
-        
-        for (NSInteger i=0; i<keysAry.count; i++) {
-            
-           resultStr = [resultStr stringByAppendingString:[NSString stringWithFormat:@"&%@=%@",CHECK_VALUE(keysAry[i]),CHECK_VALUE(valuseAry[i])]];
-            
-        }
-        
-    }else{
-
-        
-        url = [url stringByAppendingString:@"?"];
-        
-        for (NSInteger i=0; i<keysAry.count; i++) {
-            
-           resultStr = [resultStr stringByAppendingString:[NSString stringWithFormat:@"%@=%@&",CHECK_VALUE(keysAry[i]),CHECK_VALUE(valuseAry[i])]];
-            
-        }
-    
-        if (resultStr.length >0 ) {
-            resultStr = [resultStr substringToIndex:resultStr.length-1];
-        }
-        
-        
-        
-        
-        
-    }
-
-    
-    
-    return [url stringByAppendingString:resultStr];
-
-    
-}
+//+ (NSString *)getUrlCompose:(NSMutableDictionary *)compose withUrl:(NSString *)url{
+//    
+//    NSArray *valuseAry = [compose allValues];
+//    NSArray *keysAry = [compose allKeys];
+//    
+//    
+//    NSString *resultStr = @"";
+//    if ([url contains:@"?"]) {
+//        
+//        for (NSInteger i=0; i<keysAry.count; i++) {
+//            
+//           resultStr = [resultStr stringByAppendingString:[NSString stringWithFormat:@"&%@=%@",CHECK_VALUE(keysAry[i]),CHECK_VALUE(valuseAry[i])]];
+//            
+//        }
+//        
+//    }else{
+//
+//        
+//        url = [url stringByAppendingString:@"?"];
+//        
+//        for (NSInteger i=0; i<keysAry.count; i++) {
+//            
+//           resultStr = [resultStr stringByAppendingString:[NSString stringWithFormat:@"%@=%@&",CHECK_VALUE(keysAry[i]),CHECK_VALUE(valuseAry[i])]];
+//            
+//        }
+//    
+//        if (resultStr.length >0 ) {
+//            resultStr = [resultStr substringToIndex:resultStr.length-1];
+//        }
+//        
+//        
+//        
+//        
+//        
+//    }
+//
+//    
+//    
+//    return [url stringByAppendingString:resultStr];
+//
+//    
+//}
 
 
 /**
@@ -179,38 +185,38 @@ static const NSString *Host_URL = ReleaseHost;
 }
 
 
-+ (NSString *)getUrl:(NSString *)url addEspecid:(NSString *)especid needToken:(Boolean) need params:(id)params{
-    
-    
-    
-    if (need) {
-        
-        return [self getUrlCompose:params withUrl:[self addAccessToken:[url stringByAppendingString:CHECK_VALUE(especid)]]];
-        
-    }else{
-        
-        return [self getUrlCompose:params withUrl:[url stringByAppendingString:CHECK_VALUE(especid)]];
-        
-    }
-    
-    
-    
-}
+//+ (NSString *)getUrl:(NSString *)url addEspecid:(NSString *)especid needToken:(Boolean) need params:(id)params{
+//    
+//    
+//    
+//    if (need) {
+//        
+//        return [self getUrlCompose:params withUrl:[self addAccessToken:[url stringByAppendingString:CHECK_VALUE(especid)]]];
+//        
+//    }else{
+//        
+//        return [self getUrlCompose:params withUrl:[url stringByAppendingString:CHECK_VALUE(especid)]];
+//        
+//    }
+//    
+//    
+//    
+//}
 
 
-+ (NSString *)postUrl:(NSString *)url addEspecid:(NSString *)especid needToken:(Boolean) need{
-    
-    if (need) {
-        
-        return [self addAccessToken:[url stringByAppendingString:CHECK_VALUE(especid)]];
-        
-    }else{
-        
-        return [url stringByAppendingString:CHECK_VALUE(especid)];
-        
-    }
-    
-}
+//+ (NSString *)postUrl:(NSString *)url addEspecid:(NSString *)especid needToken:(Boolean) need{
+//    
+//    if (need) {
+//        
+//        return [self addAccessToken:[url stringByAppendingString:CHECK_VALUE(especid)]];
+//        
+//    }else{
+//        
+//        return [url stringByAppendingString:CHECK_VALUE(especid)];
+//        
+//    }
+//    
+//}
 
 
 //- (NSString *)checkLastCharter:(NSString *)url{

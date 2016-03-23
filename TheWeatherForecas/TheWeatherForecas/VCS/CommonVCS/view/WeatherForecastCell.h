@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeatherModel.h"
 
 @interface WeatherForecastCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *cityName;
+@property (weak, nonatomic) IBOutlet UILabel *cityWeather;
+@property (weak, nonatomic) IBOutlet UILabel *cityTemp;
+@property (weak, nonatomic) IBOutlet UILabel *cityHumidity;
+
+- (void)setWeatherForecast:(WeatherModel *)model;
 
 @end

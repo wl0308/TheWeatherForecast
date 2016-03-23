@@ -9,10 +9,11 @@
 #import "AFHTTPRequestOperationManager.h"
 @class BaseRequestParamsModel;
 #define HttpOperation AFHTTPRequestOperation
+//#define JsonFromDic(vaule) [NSString dictionaryToJson:vaule]
 
 @interface BaseHTTPRequestOperationManager : AFHTTPRequestOperationManager
 
-
+//+ (NSString*)dictionaryToJson:(NSDictionary *)dic;
 
 + (BaseHTTPRequestOperationManager *)sharedManager;
 

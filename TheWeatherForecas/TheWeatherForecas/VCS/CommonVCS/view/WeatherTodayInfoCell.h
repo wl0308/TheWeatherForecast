@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface WeatherTodayInfoCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *weatherInfo_lbl;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeatherModel.h"
 
 @interface WeatherForecasHeadCell : UITableViewCell
 
@@ -16,6 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *weatherHigh;
 @property (weak, nonatomic) IBOutlet UILabel *weatherLow;
 
-- (void)setWeatherInfo:(NSIndexPath *)indexPath;
+- (void)setWeatherInfo:(Future *)model;
 
 @end

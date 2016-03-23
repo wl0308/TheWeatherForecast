@@ -30,7 +30,7 @@
 #import "ColorDefine.h"
 #import "StringDefine.h"
 #import "ToolDefine.h"
-//#import "HttpConfig.h"
+#import "HttpConfig.h"
 //#import "NSDictionary+FarmInformation.h"
 //#import "NSString+Category.h"
 //#pragma mark ----------------------------- UI
@@ -59,15 +59,15 @@
 //#import <Masonry.h>
 //#import <ReactiveCocoa.h>
 //#import <LxDBAnything/LxDBAnything.h>
-////#import <UIImageView+WebCache.h>
+//#import <UIImageView+WebCache.h>
 //#import "Singer.h"
-//#import <SVProgressHUD/SVProgressHUD.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 //#import "OMGToast.h"
 //#import "CommonMethod.h"
 //#import <CoreLocation/CoreLocation.h>
-//#import "BaiduLocationManger.h"
-//
-//#import <MJExtension.h>
+#import "BaiduLocationManger.h"
+
+#import <MJExtension.h>
 
 
 #endif /* PrefixHeader_pch */

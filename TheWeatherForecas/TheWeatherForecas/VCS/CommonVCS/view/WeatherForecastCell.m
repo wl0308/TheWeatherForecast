@@ -10,6 +10,14 @@
 
 @implementation WeatherForecastCell
 
+- (void)setWeatherForecast:(WeatherModel *)model {
+    
+    self.cityName.text = model.result.today.city;
+    self.cityWeather.text = model.result.today.weather;
+    self.cityTemp.text = model.result.sk.temp;
+    self.cityHumidity.text = [NSString  stringWithFormat:@"湿度:%@",model.result.sk.humidity];
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }

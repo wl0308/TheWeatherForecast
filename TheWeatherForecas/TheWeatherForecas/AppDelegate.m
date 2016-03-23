@@ -9,7 +9,11 @@
 #import "AppDelegate.h"
 #import "WeatherForecastVC.h"
 
-@interface AppDelegate ()
+BMKMapManager* _mapManager;
+
+static NSString * const BaiduMapAppKey = @"PQrLNb4nPhTp6ZIEg37hRskBIo0wH3e5";//百度地图appkey
+
+@interface AppDelegate ()<BMKGeneralDelegate>
 
 @end
 
@@ -22,6 +26,19 @@
 //    window.rootViewController = vc;
 //    
 //    [self.window makeKeyAndVisible];
+    
+    // 要使用百度地图，请先启动BaiduMapManager
+    _mapManager = [[BMKMapManager alloc]init];
+    BOOL ret = [_mapManager start:BaiduMapAppKey generalDelegate:self];
+    
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [[BaiduLocationManger share] startLocation];
+        NSLog(@"--------%@,%@",[BaiduLocationManger share].latitude,[BaiduLocationManger share].longitude);
+    });
     
     return YES;
 }

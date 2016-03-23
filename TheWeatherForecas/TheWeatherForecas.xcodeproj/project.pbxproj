@@ -58,6 +58,13 @@
 		E767F17A1CA159830035FED4 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E767F1561CA159830035FED4 /* NSString+Category.m */; };
 		E767F1811CA159830035FED4 /* Singer.m in Sources */ = {isa = PBXBuildFile; fileRef = E767F16D1CA159830035FED4 /* Singer.m */; };
 		E767F1841CA159830035FED4 /* WeChatStylePlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = E767F1751CA159830035FED4 /* WeChatStylePlaceHolder.m */; };
+		E767F1AD1CA269E30035FED4 /* BaseHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E767F19F1CA269E30035FED4 /* BaseHTTPRequestOperationManager.m */; };
+		E767F1AE1CA269E30035FED4 /* BaseRequestParamsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E767F1A11CA269E30035FED4 /* BaseRequestParamsModel.m */; };
+		E767F1AF1CA269E30035FED4 /* DownLoadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E767F1A41CA269E30035FED4 /* DownLoadTool.m */; };
+		E767F1B01CA269E30035FED4 /* CommonHttpAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E767F1A71CA269E30035FED4 /* CommonHttpAPI.m */; };
+		E767F1B11CA269E30035FED4 /* CommonRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E767F1AB1CA269E30035FED4 /* CommonRequestModel.m */; };
+		E767F1F51CA28F280035FED4 /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E767F1F31CA28F280035FED4 /* WeatherModel.m */; };
+		E767F1F81CA28F640035FED4 /* BaiduLocationManger.mm in Sources */ = {isa = PBXBuildFile; fileRef = E767F1F71CA28F640035FED4 /* BaiduLocationManger.mm */; };
 		E7F892DB1C9A79FE00C7B2B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F892DA1C9A79FE00C7B2B4 /* main.m */; };
 		E7F892DE1C9A79FE00C7B2B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F892DD1C9A79FE00C7B2B4 /* AppDelegate.m */; };
 		E7F892E41C9A79FE00C7B2B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F892E21C9A79FE00C7B2B4 /* Main.storyboard */; };
@@ -153,6 +160,21 @@
 		E767F16D1CA159830035FED4 /* Singer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singer.m; sourceTree = "<group>"; };
 		E767F1741CA159830035FED4 /* WeChatStylePlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeChatStylePlaceHolder.h; sourceTree = "<group>"; };
 		E767F1751CA159830035FED4 /* WeChatStylePlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeChatStylePlaceHolder.m; sourceTree = "<group>"; };
+		E767F19E1CA269E30035FED4 /* BaseHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		E767F19F1CA269E30035FED4 /* BaseHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		E767F1A01CA269E30035FED4 /* BaseRequestParamsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequestParamsModel.h; sourceTree = "<group>"; };
+		E767F1A11CA269E30035FED4 /* BaseRequestParamsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequestParamsModel.m; sourceTree = "<group>"; };
+		E767F1A31CA269E30035FED4 /* DownLoadTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadTool.h; sourceTree = "<group>"; };
+		E767F1A41CA269E30035FED4 /* DownLoadTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadTool.m; sourceTree = "<group>"; };
+		E767F1A61CA269E30035FED4 /* CommonHttpAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonHttpAPI.h; sourceTree = "<group>"; };
+		E767F1A71CA269E30035FED4 /* CommonHttpAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonHttpAPI.m; sourceTree = "<group>"; };
+		E767F1A81CA269E30035FED4 /* HttpConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpConfig.h; sourceTree = "<group>"; };
+		E767F1AA1CA269E30035FED4 /* CommonRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonRequestModel.h; sourceTree = "<group>"; };
+		E767F1AB1CA269E30035FED4 /* CommonRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonRequestModel.m; sourceTree = "<group>"; };
+		E767F1F21CA28F280035FED4 /* WeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherModel.h; sourceTree = "<group>"; };
+		E767F1F31CA28F280035FED4 /* WeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherModel.m; sourceTree = "<group>"; };
+		E767F1F61CA28F640035FED4 /* BaiduLocationManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduLocationManger.h; sourceTree = "<group>"; };
+		E767F1F71CA28F640035FED4 /* BaiduLocationManger.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BaiduLocationManger.mm; sourceTree = "<group>"; };
 		E7ED1B8C1C9FA68F00A19385 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		E7ED1B8E1C9FA69F00A19385 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E7ED1B901C9FA6AA00A19385 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -347,8 +369,8 @@
 			isa = PBXGroup;
 			children = (
 				E767F1221CA144140035FED4 /* controller */,
-				E767F1231CA144140035FED4 /* model */,
-				E767F1241CA144140035FED4 /* Tool */,
+				E767F1F11CA28F280035FED4 /* model */,
+				E767F1F41CA28F280035FED4 /* Tool */,
 				E767F1251CA144140035FED4 /* view */,
 			);
 			path = CommonVCS;
@@ -361,20 +383,6 @@
 				B75522CE1CA1799C0092DA83 /* WeatherForecastVC.m */,
 			);
 			path = controller;
-			sourceTree = "<group>";
-		};
-		E767F1231CA144140035FED4 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		E767F1241CA144140035FED4 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tool;
 			sourceTree = "<group>";
 		};
 		E767F1251CA144140035FED4 /* view */ = {
@@ -447,6 +455,74 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E767F19D1CA269E30035FED4 /* NetWorking */ = {
+			isa = PBXGroup;
+			children = (
+				E767F19E1CA269E30035FED4 /* BaseHTTPRequestOperationManager.h */,
+				E767F19F1CA269E30035FED4 /* BaseHTTPRequestOperationManager.m */,
+				E767F1A01CA269E30035FED4 /* BaseRequestParamsModel.h */,
+				E767F1A11CA269E30035FED4 /* BaseRequestParamsModel.m */,
+				E767F1A21CA269E30035FED4 /* DownLoadTool */,
+				E767F1A51CA269E30035FED4 /* HttpTools */,
+				E767F1A91CA269E30035FED4 /* RequestModels */,
+				E767F1AC1CA269E30035FED4 /* ZipArchiveTool */,
+			);
+			path = NetWorking;
+			sourceTree = "<group>";
+		};
+		E767F1A21CA269E30035FED4 /* DownLoadTool */ = {
+			isa = PBXGroup;
+			children = (
+				E767F1A31CA269E30035FED4 /* DownLoadTool.h */,
+				E767F1A41CA269E30035FED4 /* DownLoadTool.m */,
+			);
+			path = DownLoadTool;
+			sourceTree = "<group>";
+		};
+		E767F1A51CA269E30035FED4 /* HttpTools */ = {
+			isa = PBXGroup;
+			children = (
+				E767F1A61CA269E30035FED4 /* CommonHttpAPI.h */,
+				E767F1A71CA269E30035FED4 /* CommonHttpAPI.m */,
+				E767F1A81CA269E30035FED4 /* HttpConfig.h */,
+			);
+			path = HttpTools;
+			sourceTree = "<group>";
+		};
+		E767F1A91CA269E30035FED4 /* RequestModels */ = {
+			isa = PBXGroup;
+			children = (
+				E767F1AA1CA269E30035FED4 /* CommonRequestModel.h */,
+				E767F1AB1CA269E30035FED4 /* CommonRequestModel.m */,
+			);
+			path = RequestModels;
+			sourceTree = "<group>";
+		};
+		E767F1AC1CA269E30035FED4 /* ZipArchiveTool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ZipArchiveTool;
+			sourceTree = "<group>";
+		};
+		E767F1F11CA28F280035FED4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E767F1F21CA28F280035FED4 /* WeatherModel.h */,
+				E767F1F31CA28F280035FED4 /* WeatherModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		E767F1F41CA28F280035FED4 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				E767F1F61CA28F640035FED4 /* BaiduLocationManger.h */,
+				E767F1F71CA28F640035FED4 /* BaiduLocationManger.mm */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		E7F892CD1C9A79FE00C7B2B4 = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +548,7 @@
 		E7F892D81C9A79FE00C7B2B4 /* TheWeatherForecas */ = {
 			isa = PBXGroup;
 			children = (
+				E767F19D1CA269E30035FED4 /* NetWorking */,
 				E767F0A61CA143FB0035FED4 /* Base */,
 				E767F0AE1CA144140035FED4 /* Common */,
 				E767F0D81CA144140035FED4 /* Defines */,
@@ -736,17 +813,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E767F1F51CA28F280035FED4 /* WeatherModel.m in Sources */,
+				E767F1AD1CA269E30035FED4 /* BaseHTTPRequestOperationManager.m in Sources */,
 				E7F892DE1C9A79FE00C7B2B4 /* AppDelegate.m in Sources */,
+				E767F1B11CA269E30035FED4 /* CommonRequestModel.m in Sources */,
+				E767F1F81CA28F640035FED4 /* BaiduLocationManger.mm in Sources */,
 				B75523221CA1A3B00092DA83 /* WeatherHeadView.m in Sources */,
 				B75522D51CA17E990092DA83 /* WeatherForecasHeadCell.m in Sources */,
+				E767F1AE1CA269E30035FED4 /* BaseRequestParamsModel.m in Sources */,
 				E767F1841CA159830035FED4 /* WeChatStylePlaceHolder.m in Sources */,
 				B75522D01CA1799C0092DA83 /* WeatherForecastVC.m in Sources */,
 				E767F1811CA159830035FED4 /* Singer.m in Sources */,
 				B75523311CA1ABFA0092DA83 /* WeatherInfoCell.m in Sources */,
+				E767F1B01CA269E30035FED4 /* CommonHttpAPI.m in Sources */,
 				E767F17A1CA159830035FED4 /* NSString+Category.m in Sources */,
 				E7F892DB1C9A79FE00C7B2B4 /* main.m in Sources */,
 				B755232C1CA1AA370092DA83 /* WeatherTodayInfoCell.m in Sources */,
 				B755231A1CA19C8B0092DA83 /* WeatherForecastCell.m in Sources */,
+				E767F1AF1CA269E30035FED4 /* DownLoadTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +964,7 @@
 			baseConfigurationReference = 9E4284C13E1F0BC3CE44D80F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = YES;
@@ -898,6 +983,7 @@
 			baseConfigurationReference = 3E154BEA77F1B53EEE21FE79 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = YES;

@@ -12,10 +12,22 @@
 #import "WeatherHeadView.h"
 #import "WeatherTodayInfoCell.h"
 #import "WeatherInfoCell.h"
+#import "WeatherModel.h"
+//#import <AFNetworking.h>
+
+static NSString * const WEATHER_KEY = @"af5a3721915b6e3a3016fe694f47b0de";//聚合数据Key
+
+#define JsonFromDic(vaule) [self dictionaryToJson:vaule]
 
 @interface WeatherForecastVC () {
     
     UITableView *_tableView;
+    
+    NSString *cityName;
+    
+    NSString *key;
+    
+    WeatherModel *weather_model;
 }
 
 @end
@@ -33,7 +45,59 @@
     [self.tableView setBackgroundView:imageView];
     self.tableView.backgroundView = imageView;
     
-    NSLog(@"tableview");
+    self.tableView.showsVerticalScrollIndicator = NO;
+    
+//    cityName = @"苏州";
+    
+//    [self getInfo];
+//    [SVProgressHUD showWithStatus:@"正在获取当前位置"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"--------%@,%@",[BaiduLocationManger share].latitude,[BaiduLocationManger share].longitude);
+        
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        CLGeocodeCompletionHandler handler = ^(NSArray *place,NSError *error) {
+            for(CLPlacemark *placeMark in place) {
+                cityName = placeMark.locality;
+                [self getInfo];
+                break;
+            }
+        };
+        CLLocation *loc = [[CLLocation alloc] initWithLatitude:[[BaiduLocationManger share].latitude floatValue] longitude:[[BaiduLocationManger share].longitude floatValue]];
+        
+        [geocoder reverseGeocodeLocation:loc completionHandler:handler];
+    });
+    
+    
+}
+
+
+- (void)getInfo {
+    
+    [CommonHttpAPI getWeatherInfoWithParameters:[NSString stringWithFormat:@"?format=2&cityname=%@&key=%@",cityName,WEATHER_KEY] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [SVProgressHUD dismiss];
+        
+        [self dictionaryToJson:responseObject];
+        weather_model = [WeatherModel mj_objectWithKeyValues:responseObject];
+        
+        [self.tableView reloadData];
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+        [SVProgressHUD dismiss];
+    }];
+}
+
+- (void)dictionaryToJson:(NSDictionary *)dic
+
+{
+    
+    NSError *parseError = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    NSLog(@"%@",parseError);
+//    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,7 +116,7 @@
     if (section == 0) {
         return 1;
     }else if (section == 1) {
-        return 7;
+        return weather_model.result.future.count;
     }else if (section == 2) {
         return 1;
     }else if (section == 3) {
@@ -64,7 +128,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        return 140;
+        return 200;
     }
     if (indexPath.section == 1) {
         return 30;
@@ -120,7 +184,7 @@
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"WeatherForecastCell" owner:self options:nil] firstObject];
         }
-//        [cell setWeatherInfo:indexPath];
+        [cell setWeatherForecast:weather_model];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
@@ -131,7 +195,7 @@
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"WeatherForecasHeadCell" owner:self options:nil] firstObject];
         }
-        [cell setWeatherInfo:indexPath];
+        [cell setWeatherInfo:weather_model.result.future[indexPath.row]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
@@ -142,7 +206,7 @@
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"WeatherTodayInfoCell" owner:self options:nil] firstObject];
         }
-//        [cell setWeatherInfo:indexPath];
+        cell.weatherInfo_lbl.text = [NSString stringWithFormat:@"今天：%@。当前气温%@",weather_model.result.today.weather,weather_model.result.sk.temp];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
