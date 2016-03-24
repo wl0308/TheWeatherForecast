@@ -20,13 +20,15 @@ static NSString * const WEATHER_KEY = @"af5a3721915b6e3a3016fe694f47b0de";//聚�
 #define JsonFromDic(vaule) [self dictionaryToJson:vaule]
 
 @interface WeatherForecastVC () {
-    
-    UITableView *_tableView;
-    
+    /**
+     *  城市名
+     */
     NSString *cityName;
     
-    NSString *key;
-    
+//    NSString *key;
+    /**
+     *  数据源
+     */
     WeatherModel *weather_model;
 }
 
@@ -37,23 +39,23 @@ static NSString * const WEATHER_KEY = @"af5a3721915b6e3a3016fe694f47b0de";//聚�
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H)];
-//    
-//    [self.view addSubview:_tableView];
+    /**
+     设置tableView背景图
+     */
     UIImageView *imageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"weather_image_6.jpg"]];
-//    imageView.image=[UIImage imageNamed:@"荷花开.png"];
     [self.tableView setBackgroundView:imageView];
     self.tableView.backgroundView = imageView;
     
+    //隐藏tableView滑动条
     self.tableView.showsVerticalScrollIndicator = NO;
     
-//    cityName = @"苏州";
-    
-//    [self getInfo];
+
 //    [SVProgressHUD showWithStatus:@"正在获取当前位置"];
+    //延迟操作
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSLog(@"--------%@,%@",[BaiduLocationManger share].latitude,[BaiduLocationManger share].longitude);
         
+        //获取定位的城市名
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
         CLGeocodeCompletionHandler handler = ^(NSArray *place,NSError *error) {
             for(CLPlacemark *placeMark in place) {
@@ -70,9 +72,11 @@ static NSString * const WEATHER_KEY = @"af5a3721915b6e3a3016fe694f47b0de";//聚�
     
 }
 
-
+/**
+ *  请求数据
+ */
 - (void)getInfo {
-    
+//    NSLog(@"%@",cityName);
     [CommonHttpAPI getWeatherInfoWithParameters:[NSString stringWithFormat:@"?format=2&cityname=%@&key=%@",cityName,WEATHER_KEY] success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [SVProgressHUD dismiss];
@@ -88,6 +92,11 @@ static NSString * const WEATHER_KEY = @"af5a3721915b6e3a3016fe694f47b0de";//聚�
     }];
 }
 
+/**
+ *  打印获取的数据呈Json格式
+ *
+ *  @param dic <#dic description#>
+ */
 - (void)dictionaryToJson:(NSDictionary *)dic
 
 {
@@ -100,13 +109,8 @@ static NSString * const WEATHER_KEY = @"af5a3721915b6e3a3016fe694f47b0de";//聚�
     NSLog(@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     return 4;
@@ -128,7 +132,7 @@ static NSString * const WEATHER_KEY = @"af5a3721915b6e3a3016fe694f47b0de";//聚�
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        return 200;
+        return 260;
     }
     if (indexPath.section == 1) {
         return 30;
@@ -185,6 +189,14 @@ static NSString * const WEATHER_KEY = @"af5a3721915b6e3a3016fe694f47b0de";//聚�
             cell = [[[NSBundle mainBundle] loadNibNamed:@"WeatherForecastCell" owner:self options:nil] firstObject];
         }
         [cell setWeatherForecast:weather_model];
+        [[cell.citySelectBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"城市选择" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+            [alertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+            UITextField *field = [alertView textFieldAtIndex:0];
+            field.placeholder = @"请输入查询的城市";
+            [alertView show];
+        }];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
@@ -223,16 +235,23 @@ static NSString * const WEATHER_KEY = @"af5a3721915b6e3a3016fe694f47b0de";//聚�
         return cell;
     }
     
-    static NSString *identifier = @"WeatherForecasHeadCell";
-    WeatherForecasHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"WeatherForecasHeadCell" owner:self options:nil] firstObject];
-    }
-    [cell setWeatherInfo:indexPath];
-    
-    return cell;
+    return nil;
 }
 
+#pragma mark -UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == alertView.firstOtherButtonIndex) {
+        UITextField *field = [alertView textFieldAtIndex:0];
+        NSLog(@"%@",field.text);
+        if ([field.text isEqualToString:@""]) {
+            [SVProgressHUD showErrorWithStatus:@"回复内容不能为空"];
+        }else {
+            cityName = field.text;
+            [self getInfo];
+        }
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

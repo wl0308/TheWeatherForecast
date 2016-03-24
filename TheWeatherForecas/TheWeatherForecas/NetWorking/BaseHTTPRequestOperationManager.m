@@ -39,28 +39,28 @@ static const NSString *Host_URL = ReleaseHost;
     NSLog(@"\n请求链接%@",method);
     NSLog(@"\n请求参数%@",parameters);
     //请求类型 get
-//    [[BaseHTTPRequestOperationManager sharedManager] GET:[Host_URL stringByAppendingString:method] parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        
-//       id result =  [self getResult:responseObject];
-//
-//        success(operation,result);
-//
-//        
-//    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-//        NSLog(@"%@",error);
-//        failure(operation, error);
-//    }];
-    [[BaseHTTPRequestOperationManager sharedManager] GET:[@"http://v.juhe.cn/weather/index?format=2&cityname=苏州&key=af5a3721915b6e3a3016fe694f47b0de" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [[BaseHTTPRequestOperationManager sharedManager] GET:[[Host_URL stringByAppendingString:method] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
-        id result =  [self getResult:responseObject];
-        
+       id result =  [self getResult:responseObject];
+
         success(operation,result);
-        
+
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         NSLog(@"%@",error);
         failure(operation, error);
     }];
+//    [[BaseHTTPRequestOperationManager sharedManager] GET:[@"http://v.juhe.cn/weather/index?format=2&cityname=苏州&key=af5a3721915b6e3a3016fe694f47b0de" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+//        
+//        id result =  [self getResult:responseObject];
+//        
+//        success(operation,result);
+//        
+//        
+//    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+//        NSLog(@"%@",error);
+//        failure(operation, error);
+//    }];
     
 }
 

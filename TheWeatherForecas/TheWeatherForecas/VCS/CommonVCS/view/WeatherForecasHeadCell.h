@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "WeatherModel.h"
 
-@interface WeatherForecasHeadCell : UITableViewCell
+@interface WeatherForecasHeadCell : UITableViewCell {
+    NSString *weatherImgName;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *weatherWeek;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImg;

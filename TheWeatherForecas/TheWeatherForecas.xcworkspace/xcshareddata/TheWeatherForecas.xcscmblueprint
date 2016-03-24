@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DDCA4CAA818A733A9CD1F0394233C047D40BA2F7+++EC0B6C2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DDCA4CAA818A733A9CD1F0394233C047D40BA2F7+++EC0B6C2" : 0,
+    "DDCA4CAA818A733A9CD1F0394233C047D40BA2F7+++0F1E7CE" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3962E383-DD4E-427F-AB1C-D185594489EB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DDCA4CAA818A733A9CD1F0394233C047D40BA2F7+++EC0B6C2" : "TheWeatherForecast",
+    "DDCA4CAA818A733A9CD1F0394233C047D40BA2F7+++0F1E7CE" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TheWeatherForecas",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TheWeatherForecas\/TheWeatherForecas.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wl0308\/TheWeatherForecast.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DDCA4CAA818A733A9CD1F0394233C047D40BA2F7+++0F1E7CE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wl0308\/TheWeatherForecast.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DDCA4CAA818A733A9CD1F0394233C047D40BA2F7+++EC0B6C2"
+    }
+  ]
+}

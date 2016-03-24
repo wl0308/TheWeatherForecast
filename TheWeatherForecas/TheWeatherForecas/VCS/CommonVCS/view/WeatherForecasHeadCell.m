@@ -12,17 +12,38 @@
 
 - (void)setWeatherInfo:(Future *)model {
     
-    //假数据，后期删除
-    NSArray *arrWeek = [[NSArray alloc] initWithObjects:@"星期一",@"星期二",@"星期三",@"星期四",@"星期五",@"星期六",@"星期天", nil];
-    NSArray *arrWeatherImg = [[NSArray alloc] initWithObjects:@"weather_code_day_0.png",@"weather_code_day_1.png",@"weather_code_day_2.png",@"weather_code_day_3.png",@"weather_code_day_4.png",@"weather_code_day_5.png",@"weather_code_day_6.png", nil];
-    NSArray *arrWeather = [[NSArray alloc] initWithObjects:@"小雨",@"中雨",@"大雨",@"雷雨",@"晴天",@"多云",@"阴天", nil];
-    NSArray *arrHigh = [[NSArray alloc] initWithObjects:@"21",@"11",@"20",@"23",@"25",@"17",@"19", nil];
-    NSArray *arrLow = [[NSArray alloc] initWithObjects:@"11",@"9",@"14",@"15",@"17",@"12",@"13", nil];
-    
     self.weatherWeek.text = model.week;
-    self.weatherImg.image = [UIImage imageNamed:arrWeatherImg[1]];
+//    self.weatherImg.image = [UIImage imageNamed:arrWeatherImg[1]];
     self.weatherState.text = model.weather;
     self.weatherHigh.text = model.temperature;
+    if ([model.weather_id.fb isEqualToString:@"00"]) {
+        weatherImgName = @"weather_code_day_4.png";
+    }else if ([model.weather_id.fb isEqualToString:@"01"]) {
+        weatherImgName = @"weather_code_day_5.png";
+    }else if ([model.weather_id.fb isEqualToString:@"02"]) {
+        weatherImgName = @"weather_code_day_6.png";
+    }else if ([model.weather_id.fb isEqualToString:@"03"]) {
+        weatherImgName = @"weather_code_day_4.png";
+    }else if ([model.weather_id.fb isEqualToString:@"04"] || [model.weather_id.fb isEqualToString:@"05"]) {
+        weatherImgName = @"weather_code_day_12.png";
+    }else if ([model.weather_id.fb isEqualToString:@"06"]) {
+        weatherImgName = @"weather_code_day_9.png";
+    }else if ([model.weather_id.fb isEqualToString:@"07"] || [model.weather_id.fb isEqualToString:@"08"]) {
+        weatherImgName = @"weather_code_day_0.png";
+    }else if ([model.weather_id.fb isEqualToString:@"09"]) {
+        weatherImgName = @"weather_code_day_1.png";
+    }else if ([model.weather_id.fb isEqualToString:@"10"] || [model.weather_id.fb isEqualToString:@"11"] || [model.weather_id.fb isEqualToString:@"12"]) {
+        weatherImgName = @"weather_code_day_2.png";
+    }else if ([model.weather_id.fb isEqualToString:@"13"] || [model.weather_id.fb isEqualToString:@"14"] || [model.weather_id.fb isEqualToString:@"15"] || [model.weather_id.fb isEqualToString:@"16"] || [model.weather_id.fb isEqualToString:@"17"]) {
+        weatherImgName = @"weather_code_day_9.png";
+    }else if ([model.weather_id.fb isEqualToString:@"18"] || [model.weather_id.fb isEqualToString:@"19"] || [model.weather_id.fb isEqualToString:@"20"] || [model.weather_id.fb isEqualToString:@"29"] || [model.weather_id.fb isEqualToString:@"30"] || [model.weather_id.fb isEqualToString:@"31"] || [model.weather_id.fb isEqualToString:@"53"]) {
+        weatherImgName = @"weather_code_day_10.png";
+    }else if ([model.weather_id.fb isEqualToString:@"21"] || [model.weather_id.fb isEqualToString:@"22"] || [model.weather_id.fb isEqualToString:@"23"] || [model.weather_id.fb isEqualToString:@"24"] || [model.weather_id.fb isEqualToString:@"25"]) {
+        weatherImgName = @"weather_code_day_1.png";
+    }else if ([model.weather_id.fb isEqualToString:@"26"] || [model.weather_id.fb isEqualToString:@"27"] || [model.weather_id.fb isEqualToString:@"28"]) {
+        weatherImgName = @"weather_code_day_9.png";
+    }
+    self.weatherImg.image = [UIImage imageNamed:weatherImgName];
 //    self.weatherLow.text = arrLow[indexPath.row];
 }
 
